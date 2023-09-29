@@ -69,6 +69,11 @@ from . import haerae
 from . import cmmlu
 
 ########################################
+# Vietnamese tasks
+from . import lambada_vi
+########################################
+
+########################################
 # Translation tasks
 ########################################
 
@@ -350,6 +355,10 @@ TASK_REGISTRY = {
     **scrolls.construct_tasks(),
     **ceval.create_all_tasks(),
     **cmmlu.create_all_tasks(),
+}
+
+TASK_REGISTRY = {
+    "lambada_vi": lambada_vi.Lambada_vi,
 }
 
 
