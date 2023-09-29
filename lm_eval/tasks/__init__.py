@@ -71,6 +71,7 @@ from . import cmmlu
 ########################################
 # Vietnamese tasks
 from . import lambada_vi
+from . import arc_vi
 ########################################
 
 ########################################
@@ -359,6 +360,7 @@ TASK_REGISTRY = {
 
 TASK_REGISTRY = {
     "lambada_vi": lambada_vi.Lambada_vi,
+    "arc_vi": arc_vi.ARCChallenge_vi,
 }
 
 
