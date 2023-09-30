@@ -75,6 +75,7 @@ from . import arc_vi
 from . import hellaswag_vi
 from . import mmlu_vi
 from . import truthfulqa_vi
+from . import grade_12_exams_vi
 ########################################
 
 ########################################
@@ -367,6 +368,7 @@ TASK_REGISTRY = {
     "hellaswag_vi": hellaswag_vi.HellaSwag_vi,
     "mmlu_vi": mmlu_vi.MMLU_vi,
     "truthfulqa_vi": truthfulqa_vi.TruthfulQAMultipleChoice_vi,
+    "grade_12_exams_vi": grade_12_exams_vi.Grade12Exams_vi,
 }
 
 
