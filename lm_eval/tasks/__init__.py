@@ -72,6 +72,9 @@ from . import cmmlu
 # Vietnamese tasks
 from . import lambada_vi
 from . import arc_vi
+from . import hellaswag_vi
+from . import mmlu_vi
+from . import truthfulqa_vi
 ########################################
 
 ########################################
@@ -361,6 +364,9 @@ TASK_REGISTRY = {
 TASK_REGISTRY = {
     "lambada_vi": lambada_vi.Lambada_vi,
     "arc_vi": arc_vi.ARCChallenge_vi,
+    "hellaswag_vi": hellaswag_vi.HellaSwag_vi,
+    "mmlu_vi": mmlu_vi.MMLU_vi,
+    "truthfulqa_vi": truthfulqa_vi.TruthfulQAMultipleChoice_vi,
 }
 
 
