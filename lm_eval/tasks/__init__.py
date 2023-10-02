@@ -76,6 +76,7 @@ from . import hellaswag_vi
 from . import mmlu_vi
 from . import truthfulqa_vi
 from . import grade_12_exams_vi
+from . import arithmetic_vi
 ########################################
 
 ########################################
@@ -369,6 +370,17 @@ TASK_REGISTRY = {
     "mmlu_vi": mmlu_vi.MMLU_vi,
     "truthfulqa_vi": truthfulqa_vi.TruthfulQAMultipleChoice_vi,
     "grade_12_exams_vi": grade_12_exams_vi.Grade12Exams_vi,
+
+    "arithmetic_2da": arithmetic_vi.Arithmetic2DPlus_vi,
+    "arithmetic_2ds": arithmetic_vi.Arithmetic2DMinus_vi,
+    "arithmetic_3da": arithmetic_vi.Arithmetic3DPlus_vi,
+    "arithmetic_3ds": arithmetic_vi.Arithmetic3DMinus_vi,
+    "arithmetic_4da": arithmetic_vi.Arithmetic4DPlus_vi,
+    "arithmetic_4ds": arithmetic_vi.Arithmetic4DMinus_vi,
+    "arithmetic_5da": arithmetic_vi.Arithmetic5DPlus_vi,
+    "arithmetic_5ds": arithmetic_vi.Arithmetic5DMinus_vi,
+    "arithmetic_2dm": arithmetic_vi.Arithmetic2DMultiplication_vi,
+    "arithmetic_1dc": arithmetic_vi.Arithmetic1DComposite_vi,
 }
 
 
