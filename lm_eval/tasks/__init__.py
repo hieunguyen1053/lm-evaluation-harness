@@ -77,6 +77,8 @@ from . import mmlu_vi
 from . import truthfulqa_vi
 from . import grade_12_exams_vi
 from . import arithmetic_vi
+from . import translation_vi
+from . import xnli_vi
 ########################################
 
 ########################################
@@ -381,6 +383,9 @@ TASK_REGISTRY = {
     "arithmetic_5ds": arithmetic_vi.Arithmetic5DMinus_vi,
     "arithmetic_2dm": arithmetic_vi.Arithmetic2DMultiplication_vi,
     "arithmetic_1dc": arithmetic_vi.Arithmetic1DComposite_vi,
+
+    "translation_vi": translation_vi.Translation_vi,
+    "xnli_vi": xnli_vi.XNLI_vi,
 }
 
 
