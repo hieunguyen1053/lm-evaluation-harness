@@ -51,7 +51,8 @@ python app.py \
     --device cuda:0 \
     --team_name $TEAM_NAME \
     --model_size $MODEL_SIZE \
-    --model_type $MODEL_TYPE
+    --model_type $MODEL_TYPE \
+    --secret your-secret-key
 ```
 
 To test the API, run the following command:
@@ -61,7 +62,8 @@ python evaluator.py \
     --task hellaswag_vi \
     --url http://localhost:5000 \
     --num_fewshot 10 \
-    --test
+    --test \
+    --secret your-secret-key
 ```
 
 ## Cite as
