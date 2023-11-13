@@ -10,6 +10,7 @@ def parse_args():
 
     parser.add_argument("--host", type=str, default="0.0.0.0")
     parser.add_argument("--port", type=int, default=5000)
+    parser.add_argument("--secret", type=str, required=True)
 
     parser.add_argument("--team_name", type=str, required=True)
     parser.add_argument("--model_size", type=int, required=True, choices=[1, 3, 7, 13])
@@ -38,6 +39,10 @@ def greedy_until():
     args = data.get("args", None)
     return lm.greedy_until(args)
 
+@app.before_request
+def check_secret():
+    if request.headers.get("Authorization") != f"{args.secret}":
+        return "Unauthorized", 401
 
 if __name__ == "__main__":
     args = parse_args()

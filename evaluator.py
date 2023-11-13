@@ -10,6 +10,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--task", required=True)
     parser.add_argument("--url", type=str, default="http://localhost:5000")
+    parser.add_argument("--secret", type=str, required=True)
     parser.add_argument("--num_fewshot", type=int, default=0)
     parser.add_argument("--seed", type=int, default=42)
 
@@ -21,7 +22,9 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
 
-    response = requests.get(f"{args.url}/info")
+    headers = {"Authorization": args.secret}
+
+    response = requests.get(f"{args.url}/info", headers=headers)
     info = response.json()
 
     team_name = info["team_name"]
@@ -66,10 +69,12 @@ if __name__ == "__main__":
             request_type = reqs.request_type
             data_json = {"args": [reqs.args]}
 
-        response = requests.post(f"{args.url}/{request_type}", json=data_json)
+        response = requests.post(f"{args.url}/{request_type}", json=data_json, headers=headers)
         results = response.json()
 
-        if request_type == "greedy_until":
+        if args.task == "lambada_vi":
+            results = results[0]
+        elif request_type == "greedy_until":
             results = [results[0]]
         elif request_type == "loglikelihood":
             results = [result[0] for result in results]
