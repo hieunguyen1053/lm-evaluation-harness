@@ -80,6 +80,7 @@ from . import arithmetic_vi
 from . import translation_vi
 from . import xnli_vi
 from . import hhh_alignment_vi
+from . import wikipediaqa_vi
 ########################################
 
 ########################################
@@ -388,6 +389,7 @@ TASK_REGISTRY = {
     "translation_vi": translation_vi.Translation_vi,
     "xnli_vi": xnli_vi.XNLI_vi,
     "hhh_alignment_vi": hhh_alignment_vi.HHH_alignment_vi,
+    "wikipediaqa_vi": wikipediaqa_vi.WikipediaQA_vi,
 }
 
 
