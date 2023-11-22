@@ -4,16 +4,16 @@ from lm_eval.base import Task, rf
 
 class Translation_vi(Task):
     VERSION = 0
-    DATASET_PATH = "vlsp-2023-vllm/en-to-vi-formal-informal-tranlations"
+    DATASET_PATH = "vlsp-2023-vllm/tranlation_envi"
 
     def has_training_docs(self):
         return False
 
     def has_validation_docs(self):
-        return True
+        return False
 
     def has_test_docs(self):
-        return False
+        return True
 
     def training_docs(self):
         if self.has_training_docs():
@@ -21,7 +21,7 @@ class Translation_vi(Task):
 
     def validation_docs(self):
         if self.has_validation_docs():
-            return self.dataset["val"]
+            return self.dataset["validation"]
 
     def test_docs(self):
         if self.has_test_docs():
@@ -61,7 +61,6 @@ class Translation_vi(Task):
             doc["vi"].strip(),
             list(map(str.strip, results))
         )
-        print(ref_pred)
 
         return {
             "bleu": ref_pred,
