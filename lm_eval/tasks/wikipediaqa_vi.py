@@ -5,6 +5,10 @@ class WikipediaQA_vi(MultipleChoiceTask):
     VERSION = 0
     DATASET_PATH = "vlsp-2023-vllm/wikipediaqa_vi"
 
+    def __init__(self):
+        import datasets
+        self.dataset = datasets.load_from_disk("vlsp-2023-vllm/wikipediaqa_vi")
+
     def has_training_docs(self):
         return False
 
