@@ -6,6 +6,7 @@ class WikipediaQA_vi(MultipleChoiceTask):
     DATASET_PATH = "vlsp-2023-vllm/wikipediaqa_vi"
 
     def __init__(self):
+        super().__init__()
         import datasets
         self.dataset = datasets.load_from_disk("vlsp-2023-vllm/wikipediaqa_vi")
 
